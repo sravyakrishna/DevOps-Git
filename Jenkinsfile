@@ -2,7 +2,6 @@ pipeline {
    agent {
      label 'nginx'
      }
-     
      stages {
        stage ('Checkout') {
            steps {
@@ -16,15 +15,13 @@ pipeline {
            steps {
               node ('nginx'){
                 sh 'sudo cp /home/ubuntu/workspace/Project-gitPipeline/* /var/www/html/ '
-     
-              
               }
            }
             
         }
               
      }
-              
+}    
    
    
 
