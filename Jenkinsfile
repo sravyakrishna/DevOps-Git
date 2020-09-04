@@ -1,16 +1,13 @@
 pipeline {
    agent {
-     label 'Build-nglnx'
+     label 'nginx'
      }
-    parameters 
-    
-           choice(choices: 'develop\nrelease\nmaster', description: 'select the branch name ' , name: 'Branch_Name')
-     
-    }
+   
+     }
      stages {
        stage ('Checkout') {
            steps {
-             node ('Build-nglnx') {
+             node ('nginx') {
                checkout scm
              }
             }
@@ -18,7 +15,7 @@ pipeline {
        }      
         stage ('NginxDeployment'){
            steps {
-              node ('Build-nglnx'){
+              node ('nginx'){
                 sh 'sudo cp /home/ubuntu/workspace/Project-gitPipeline/* /var/www/devops/ '
      
               
