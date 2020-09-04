@@ -11,9 +11,9 @@ pipeline {
             }
        
        }      
-        stage ('NginxDeployment'){
+        stage ('NginxDeployment') {
            steps {
-              node ('nginx'){
+              node ('nginx') {
                 sh 'sudo cp /home/ubuntu/workspace/nginx-pipeline/* /var/www/html/ '
               }
            }
