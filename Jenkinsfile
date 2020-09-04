@@ -1,18 +1,18 @@
 pipeline {
    agent {
-     label 'nginx'
+     label 'nginxslave'
      }
      stages {
        stage ('Checkout') {
            steps {
-             node ('nginx') {
+             node ('nginxslave') {
                checkout scm
              }
             }
          }      
         stage ('NginxDeployment') {
            steps {
-              node ('nginx') {
+              node ('nginxslave') {
                 sh 'sudo cp /home/ubuntu/workspace/nginx-pipeline/* /var/www/html/ '
               }
            }
