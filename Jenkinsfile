@@ -2,7 +2,7 @@ pipeline {
    agent {
      label 'nginx'
      }
-     }
+     
      stages {
        stage ('Checkout') {
            steps {
