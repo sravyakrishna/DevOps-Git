@@ -9,8 +9,7 @@ pipeline {
                checkout scm
              }
             }
-       
-       }      
+         }      
         stage ('NginxDeployment') {
            steps {
               node ('nginx') {
